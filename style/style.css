@@ -1,0 +1,202 @@
+:root {
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--Light-Grayish-Blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    border-radius: 0.75rem;
+    background-color: white;
+    overflow: hidden;
+    color: var(--Very-Dark-Grayish-Blue);
+    text-align: left;
+    margin: 3rem;
+}
+
+.card-image {
+  width: 100%;
+  display: block;
+}
+
+.title {
+    font-size: 1rem;
+    padding: 1rem 2rem 0rem;
+}
+
+.story {
+    font-size: 0.7rem;
+    margin: 0rem 2rem 1.5rem;
+}
+
+.bottom-space {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 2rem; 
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.bottom-space.active {
+    background-color: var(--Very-Dark-Grayish-Blue);
+}
+
+.default-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    visibility: visible;  
+}
+
+.share-bar {
+    position: absolute; 
+    color: var(--Light-Grayish-Blue);
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 1.5rem;
+    visibility: hidden;
+}
+
+.default-bar.active {
+    visibility: hidden;
+}
+
+.share-bar.active {
+    visibility: visible;
+}
+
+.share-text {
+    letter-spacing: 0.3rem;
+}
+
+.click-button {
+    background-color: var(--Light-Grayish-Blue);
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.click-button.active {
+    background-color: var(--Desaturated-Dark-Blue);
+}
+
+.button-icon.active .share-icon-path{
+    fill: var(--Light-Grayish-Blue);
+}
+
+
+.avatar {
+    border-radius: 50%;
+    max-width: 15%;
+    margin-right: 1rem;
+}
+
+.post-info {
+    font-size: 0.75rem;
+}
+
+.name {
+    font-weight: 700;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 60rem) {
+    .card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 50rem;
+        overflow: visible;
+    }
+
+    .title {
+        padding-top: 0rem;
+    }
+
+    .share-bar {
+        visibility: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        background-color: var(--Very-Dark-Grayish-Blue);
+        padding: 0.5rem 2rem;
+        border-radius: 0.5rem;
+        white-space: nowrap;
+        bottom: calc(100% + 1rem);
+        left: 0;
+    }
+
+    .share-bar::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 0.8rem;
+        border-style: solid;
+        border-color: var(--Very-Dark-Grayish-Blue) transparent transparent transparent;
+    }
+
+    .text-page {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+
+    .card-image {
+        width: 40%;
+        height: auto;
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+    }
+
+    .default-bar.active {
+        visibility: visible;
+    }
+
+    .bottom-space.active {
+        background-color: white;
+    }
+
+    .share-text {
+        font-weight: 200;
+        font-size: 0.8rem;
+    }
+}
+
+
+.attribution { 
+    font-size: 0.5rem; 
+    text-align: center; 
+    margin-top: 3rem;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
